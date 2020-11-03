@@ -1,0 +1,18 @@
+.slide { 
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+  }
+
+.quiz-container{ 
+    position: relative;
+    height: 200px;
+    margin-top: 40px;
+    background-color:#ffff;
+    border-radius: 6px;
+    width: 75%;
+    margin: auto;
+    padding-top: 5px;
+    position: relative;
+}
