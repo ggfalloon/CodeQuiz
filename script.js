@@ -17,42 +17,42 @@ var playAgain = document.getElementById("play-again");
 var quizQuestions = [
     {
         question: "When using JavaScript objects, which punctuation mark is used to seperate a property from its value?",
-        choiceA: " ; ",
-        choiceB: " / ",
-        choiceC: " : ",
-        correctAnswer: "c"
+        choiceA: "A. ; ",
+        choiceB: "B. / ",
+        choiceC: "C. : ",
+        correctAnswer: "choiceC"
     },
 
     {
         question: "The addEventListener() method attaches an event handler to the specified element. Which event below is NOT an HTML DOM event?",
-        choiceA: "mousein",
-        choiceB: "mouseout",
-        choiceC: "mouseover",
-        correctAnswer: "a"
+        choiceA: "A. mousein",
+        choiceB: "B. mouseout",
+        choiceC: "C. mouseover",
+        correctAnswer: "choiceA"
     },
 
     {
         question: "To prevent nested items from 'bubbling', we can do which of the following:",
-        choiceA: "Use the stop.Propogation method.",
-        choiceB: "Nest several items under one event.",
-        choiceC: "Set the event on the target element.",
-        correctAnswer: "a"
+        choiceA: "A. Use the stop.Propogation method.",
+        choiceB: "B. Nest several items under one event.",
+        choiceC: "C. Set the event on the target element.",
+        correctAnswer: "choiceA"
     },
 
     {
         question: "Utilizing the \"localStorage\" mechanism, data is saved even when the browser is closed and reopened.",
-        choiceA: "Impossible to answser!",
-        choiceB: "True",
-        choiceC: "False",
-        correctAnswer: "a"
+        choiceA: "A. Impossible to answser!",
+        choiceB: "B. True",
+        choiceC: "C. False",
+        correctAnswer: "choiceB"
     },
 
     {
         question: "To convert a JavaScript object or a value to a string, you can use which of the following methods?",
-        choiceA: "JSON.stringaling",
-        choiceB: "JSON.parse",
-        choiceC: "JSON.stringify",
-        correctAnswer: "c"
+        choiceA: "A. JSON.stringaling",
+        choiceB: "B. JSON.parse",
+        choiceC: "C. JSON.stringify",
+        correctAnswer: "choiceC"
     }
 ];
 
