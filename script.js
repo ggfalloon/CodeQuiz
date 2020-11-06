@@ -1,16 +1,15 @@
 var startButton = document.querySelector("#start-button");
 var timeShowEl = document.getElementById("timeShow");
-var quizContent = document.querySelector("quiz-content");
-var question = document.querySelector("question");
+var quizContent = document.getElementById("quiz-content");
+var questionArray = document.getElementById("question");
 var choiceA = document.getElementById("choiceA");
 var choiceB = document.getElementById("choiceB");
 var choiceC = document.getElementById("choiceC");
 var intro = document.getElementById("intro");
-// var scorePlaceholder = document.querySelector("scoreCount");
-// var submitButton = document.querySelector("submit");
+var scorePlaceholder = document.getElementById("scoreCount");
 
-var answerButton = document.querySelector("button");
-var wrongRight = document.querySelector("quizMessage");
+var submitButton = document.getElementById("submit");
+var wrongRight = document.getElementById("quizMessage");
 var clearScores = document.getElementById("clearScores");
 var playAgain = document.getElementById("play-again");
 
@@ -59,7 +58,8 @@ var quizQuestions = [
 
 var lastQuestion = quizQuestions.length - 1;
 var currentQuestion = 0;
-
+var count = 0;
+var score = 0;
 
 // Timer begins when user clicks the Start button and the first quesiton is displayed.
 startButton.addEventListener("click", startTimer);
@@ -72,7 +72,7 @@ function startTimer() {
         count--;
         timeShowEl.textContent = count;
     }, 1000);
-}
+} getQuestion
 
 // // After timer begins, each question is displayed individually.
 // quizQuestions[0].question
@@ -82,16 +82,18 @@ function startTimer() {
 // quizQuestions[0].correctAnswer
 
 
+
 function getQuestion() {
     // return questionInner.innerHTML = quizQuestions[i].question;
     var quest = quizQuestions[currentQuestion];
 
-    question.innerHTML = "<p>" + quest.question + "</p>";
+    questionArray.innerHTML = "<p>" + quest.question + "</p>";
     choiceA.innerHTML = quest.choiceA;
     choiceB.innerHTML = quest.choiceB;
     choiceC.innerHTML = quest.choiceC;
 }
 
+startButton.addEventListener("click", runQuestions);
 
 function runQuestions() {
     intro.style.display = "none";
@@ -118,5 +120,19 @@ function buttonFunction(answer) {
         return "All done! Now click \"View High Scores\" below to see and record your score."
     }
 }
+// function scoreCount() {
+//     var count = 0;
+//     var questionTime = -10;
+//     var questionPoints = 20;
+
+// When an answer selection is made, the next question pops up.
+
+// function buttonFunction(answer) {
+//     // for (var i = 0; i < quizQuestions.length; i += 1) {
+
+//     function getQuestion() {
 
 
+
+// clearScores.addEventListener("click");
+// playAgain.addEventListener("click", nextQuestion);

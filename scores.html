@@ -18,18 +18,19 @@
 
         <form id="score-form" method="POST">
             <!-- Display the final score -->
-            <label for="scoreCount">Your Final Score: </label><span class="scoreCount"></span>
+            <label for="scoreCount">Your Final Score: </label><span id="scoreCount"></span>
             <br>
             <!-- Enter initials to record score -->
             <input type="text" placeholder="Enter Initials" name="score-text" id="score-text" />
-            <button id="submit">Record Your Score</button>
+            <button class="btn btn-primary" id="submit">Record Your Score</button>
             <hr>
             <!-- Display scores, clear scores or play again -->
             <div id="results">
                 <h4>High Scores</h4>
                 <ul id="score-list"></ul>
-                <button id="clearScores">Clear Scores</button>
-                <button id="play-again">Play Again</button>
+                <button class="btn btn-primary" id="clearScores">Clear Scores</button>
+                <a href="index.html" class="btn btn-primary" id="play-again">Play Again</a>
+                <!-- <button type="submit" href="index.html"  -->
             </div>
         </form>
 
