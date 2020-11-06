@@ -1,15 +1,16 @@
 var startButton = document.querySelector("#start-button");
 var timeShowEl = document.getElementById("timeShow");
+var timer = document.getElementById("timer");
+var intro = document.getElementById("intro");
 var quizContent = document.getElementById("quiz-content");
 var questionArray = document.getElementById("question");
 var choiceA = document.getElementById("choiceA");
 var choiceB = document.getElementById("choiceB");
 var choiceC = document.getElementById("choiceC");
-var intro = document.getElementById("intro");
-var scorePlaceholder = document.getElementById("scoreCount");
-
-var submitButton = document.getElementById("submit");
 var wrongRight = document.getElementById("quizMessage");
+var scorePlaceholder = document.getElementById("scoreCount");
+var submitButton = document.getElementById("submit");
+var scoreList = document.getElementById("score-list");
 var clearScores = document.getElementById("clearScores");
 var playAgain = document.getElementById("play-again");
 
@@ -61,11 +62,11 @@ var currentQuestion = 0;
 var count = 0;
 var score = 0;
 
-// Timer begins when user clicks the Start button and the first quesiton is displayed.
+// Timer begins when user clicks the Start button the timer begins.
 startButton.addEventListener("click", startTimer);
 
 function startTimer() {
-    "use strict";
+
     var count = 60;
     var timer = setInterval(function () {
         if (count === 1) clearInterval(timer);
@@ -74,17 +75,7 @@ function startTimer() {
     }, 1000);
 } getQuestion
 
-// // After timer begins, each question is displayed individually.
-// quizQuestions[0].question
-// quizQuestions[0].choiceA
-// quizQuestions[0].choiceB
-// quizQuestions[0].choiceC
-// quizQuestions[0].correctAnswer
-
-
-
 function getQuestion() {
-    // return questionInner.innerHTML = quizQuestions[i].question;
     var quest = quizQuestions[currentQuestion];
 
     questionArray.innerHTML = "<p>" + quest.question + "</p>";
@@ -92,47 +83,81 @@ function getQuestion() {
     choiceB.innerHTML = quest.choiceB;
     choiceC.innerHTML = quest.choiceC;
 }
-
+// The first queston is displayed in sync with the start of the timer.
 startButton.addEventListener("click", runQuestions);
 
 function runQuestions() {
     intro.style.display = "none";
     getQuestion();
     quizContent.style.display = "block";
-
 }
 
-
+// When the answer is chosen, the text will confirm whether correct or wrong.
 function buttonFunction(answer) {
     if (answer === quizQuestions[currentQuestion].correctAnswer) {
         score + 20;
         wrongRight.textContent = "Correct!";
     } else {
-        score - 10;
+        timer = setInterval(-10000);
         wrongRight.textContent = "Wrong!";
     }
-
+    // You are directed to the "View High Scores" page to see your score.
     count = 0;
     if (currentQuestion < lastQuestion) {
         currentQuestion++;
         getQuestion();
-    } else {
-        return "All done! Now click \"View High Scores\" below to see and record your score."
+    } else if (currentQuestion === lastQuestion) {
+        clearInterval(timer);
+        quizContent.textContent = "All done! Now click \"View High Scores\" below to see and record your score.";
+        timeShowEl.style.display = "none";
+        timer.style.display = "none";
+        renderScores();
     }
 }
-// function scoreCount() {
-//     var count = 0;
-//     var questionTime = -10;
-//     var questionPoints = 20;
+var nameInput = document.getElementById("name-text");
+var nameList = ["Your High Score Here", ""];
+var scoreForm = document.getElementById("score-form");
 
-// When an answer selection is made, the next question pops up.
+function renderScores() {
+    scoreList.innerHTML = "";
+    for (var i = 0; i < scoreList.length; i++) {
+        var list = nameList[i];
 
-// function buttonFunction(answer) {
-//     // for (var i = 0; i < quizQuestions.length; i += 1) {
+        var li = document.createElement("li");
+        li.textContent = list;
+        li.appendChild(li);
+    }
+}
+submitButton.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-//     function getQuestion() {
+    var listText = nameInput.nodeValue.trim();
+    if (listText === "") {
+        return;
+    }
+    nameList.push(listText);
+    nameInput.value = "";
+
+    renderScores();
+});
+console.log(nameInput);
+
+
+
+
+
+
 
 
 
 // clearScores.addEventListener("click");
-// playAgain.addEventListener("click", nextQuestion);
+// function scoreCount() {
+//     for (var i = 0; i < )
+
+//         var li = document.createElement("li");
+//     li.textContent = newName;
+//     var count = 0;
+//     var questionTime = -10;
+//     var questionPoints = 20;
+
+// } scorePlaceholder.textContent = score

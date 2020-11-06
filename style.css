@@ -1,79 +1,91 @@
-.slide { 
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-  }
+body {
+    background-color:#96b7bd;
+    font-size: 20px;
+}
 
-.quiz-container{ 
-    position: relative;
-    height: 200px;
+.container { 
+    height: 500px;
     margin-top: 40px;
-    background-color:#ffff;
-    border-radius: 6px;
+    border-radius: 6px; 
     width: 75%;
     margin: auto;
-    padding-top: 5px;
-    position: relative;
+    padding-top: 30px;
+}
+.card {
+    padding-top: 30px;
+    background-color: rgb(233, 215, 241);
+    border: 8px solid black;
+    text-align: center;
+    color: rgb(88, 13, 88);
+
+}
+#intro {
+    color: rgb(88, 13, 88);
+    font-size: large;
+    text-align: center;
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    margin: auto;
+}
+
+#start-button {
+    background-color: rgb(88, 13, 88);
+    color: white;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 50;
+    width: 100%;
+    margin-top: 50px;
+    padding-top: 10px;
 }
 
 h2 {
     text-align: center;
+    margin: auto;
+    padding-top: 2px;
+    padding-bottom: 20px;
 }
 
 li {
     font-size: 1.5em;
 }
 
-.quizcontainer #quiz1 {
-text-shadow:1px 1px 2px orange;
-font-family:"Georgia", Arial, sans-serif;
+#view {
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
 }
 
-.question {
-    font-family:'Century', serif;
-    font-size: 1.5em;
-	font-weight:bold;
-    width: 100%;
-    height: auto;
-    margin: auto;
-    border-radius: 6px;
-    background-color: #f3dc45;
-    text-align: center;
+.choices {
+    margin-bottom: 5em;
 }
-.quizMessage {
-    background-color: peachpuff;
-    border-radius: 6px;
-    width: 20%;
-    margin: auto;
-    text-align: center;
-    padding: 5px;
-	font-size:20px;
-	font-weight:bold;
-    font-family:'Gabriola', serif;
-    color: red;
-	position:absolute;
-	top:80%;
-	left:40%;
+
+button {
+    margin: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
-.choiceList {
-    font-family: 'Arial', serif;
-    color: #ed12cd;
-	font-size:15px;
-	font-weight:bold;
+
+.scoreCount {
+font-size: 25px;
+margin-top: 20px;
 }
-.result {
-    width: 40%;
-    height: auto;
-    border-radius: 6px;
-    background-color: linen;
-    margin: auto;
-	color:green;
-    text-align: center;
-	font-size:25px;
-    font-family:'Verdana', serif;
-	font-weight:bold;
-	position:absolute;
-	top:80%;
-	left:30%;
+
+#play-again {
+    background-color: #17a2b8;
+    color: white;
+}
+#play-again:hover {
+    background-color: #0f7383;
+}
+
+#results {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
