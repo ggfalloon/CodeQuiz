@@ -64,18 +64,21 @@ var count = 0;
 var score = 0;
 
 // Timer begins when user clicks the Start button the timer begins.
-startButton.addEventListener("click", startTimer);
+startButton.addEventListener("click", runQuestions);
 
 function startTimer() {
 
-    var count = 60;
+    count = 60;
     var timer = setInterval(function () {
-        if (count === 1) clearInterval(timer);
+        if (count < 1) {
+            renderScores();
+            console.log("Time's Up!");
+        }
         count--;
         timeShowEl.textContent = count;
     }, 1000);
-} getQuestion
-
+    getQuestion();
+}
 function getQuestion() {
     var quest = quizQuestions[currentQuestion];
 
@@ -83,11 +86,13 @@ function getQuestion() {
     choiceA.innerHTML = quest.choiceA;
     choiceB.innerHTML = quest.choiceB;
     choiceC.innerHTML = quest.choiceC;
+    console.log(getQuestion);
 }
+
 // The first queston is displayed in sync with the start of the timer.
-startButton.addEventListener("click", runQuestions);
 
 function runQuestions() {
+    startTimer();
     intro.style.display = "none";
     getQuestion();
     quizContent.style.display = "block";
@@ -104,23 +109,19 @@ function buttonFunction(answer) {
         //     var timeEl = setInterval(function) {
         //         sec = sec -= 10;
         // }, 1000);
+        count = count - 10;
         wrongRight.textContent = "Wrong!";
     }
     // You are directed to the "View High Scores" page to see your score.
-    count = 0;
-    if (currentQuestion < lastQuestion) {
+    // count = 0;
+    if (currentQuestion < lastQuestion && count > 0) {
         currentQuestion++;
         getQuestion();
-    } else if (currentQuestion === lastQuestion || timeShowEl === 0) {
-        clearInterval(timer);
-        quizContent.textContent = "";
-        timeShowEl.style.display = "none";
-        cardFooter.style.display = "none";
-        resultsContainer.style.display = "block";
+    } else if (currentQuestion === lastQuestion || count === 0) {
+
         renderScores();
     }
 }
-// Removes event listener of the start button after you are redirected to scores.html.
 
 var nameInput = document.getElementById("name-text");
 var scoreForm = document.getElementById("score-form");
@@ -132,6 +133,11 @@ init();
 // renderScores();
 
 function renderScores() {
+    clearInterval(timer);
+    quizContent.textContent = "";
+    timeShowEl.style.display = "none";
+    cardFooter.style.display = "none";
+    resultsContainer.style.display = "block";
     scorePlaceholder.textContent = score;
     scoreList.innerHTML = "";
 
@@ -149,7 +155,7 @@ function init() {
     if (storedNames !== null) {
         nameList = storedNames;
     }
-    renderScores();
+    // renderScores();
 }
 
 function storedNames() {
@@ -178,7 +184,7 @@ submitButton.addEventListener("click", function (event) {
 //         clearList.parentNode.removeChild(clearList);
 // }
 
-//     }
+// }
 
 // });
 
