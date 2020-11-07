@@ -15,6 +15,9 @@ var clearScores = document.getElementById("clearScores");
 var playAgain = document.getElementById("play-again");
 var resultsContainer = document.getElementById("results");
 var cardFooter = document.getElementById("card-footer");
+var nameInput = document.getElementById("name-text");
+var scoreForm = document.getElementById("score-form");
+var scoreList = document.getElementById("score-list");
 
 var quizQuestions = [
     {
@@ -62,6 +65,7 @@ var lastQuestion = quizQuestions.length - 1;
 var currentQuestion = 0;
 var count = 0;
 var score = 0;
+var nameList = [];
 
 // Timer begins when user clicks the Start button the timer begins.
 startButton.addEventListener("click", runQuestions);
@@ -72,7 +76,6 @@ function startTimer() {
     var timer = setInterval(function () {
         if (count < 1) {
             renderScores();
-            console.log("Time's Up!");
         }
         count--;
         timeShowEl.textContent = count;
@@ -90,7 +93,6 @@ function getQuestion() {
 }
 
 // The first queston is displayed in sync with the start of the timer.
-
 function runQuestions() {
     startTimer();
     intro.style.display = "none";
@@ -98,22 +100,15 @@ function runQuestions() {
     quizContent.style.display = "block";
 }
 
-
-// When the answer is chosen, the text will confirm whether correct or wrong.
+// When the answer is chosen, the text will confirm whether correct or wrong, adds points or reduces time.
 function buttonFunction(answer) {
     if (answer === quizQuestions[currentQuestion].correctAnswer) {
         score = score += 20;
         wrongRight.textContent = "Correct!";
     } else {
-        //     var sec = 60
-        //     var timeEl = setInterval(function) {
-        //         sec = sec -= 10;
-        // }, 1000);
         count = count - 10;
         wrongRight.textContent = "Wrong!";
     }
-    // You are directed to the "View High Scores" page to see your score.
-    // count = 0;
     if (currentQuestion < lastQuestion && count > 0) {
         currentQuestion++;
         getQuestion();
@@ -123,14 +118,8 @@ function buttonFunction(answer) {
     }
 }
 
-var nameInput = document.getElementById("name-text");
-var scoreForm = document.getElementById("score-form");
-var scoreList = document.getElementById("score-list");
-
-var nameList = [];
-
+// Page is reset to show results. Enter initials to add score to list.
 init();
-// renderScores();
 
 function renderScores() {
     clearInterval(timer);
@@ -155,18 +144,16 @@ function init() {
     if (storedNames !== null) {
         nameList = storedNames;
     }
-    // renderScores();
 }
-
+//  Saves initials and High Scores to local storage.
 function storedNames() {
     localStorage.setItem("nameList", JSON.stringify(nameList));
 }
 
+// When the submit button is clicked, name is added to list.
 submitButton.addEventListener("click", function (event) {
     event.preventDefault();
-
     var nameText = nameInput.value.trim();
-
 
     if (nameText === "") {
         return;
@@ -178,16 +165,14 @@ submitButton.addEventListener("click", function (event) {
     renderScores();
 });
 
-// clearScores.addEventListener("click", function (clear) {
-//     function clear(item) {
-//         var clearList = document.getElementById(item);
-//         clearList.parentNode.removeChild(clearList);
-// }
+// When clear button is clicked, local storage and text are cleared.
+function clearAll() {
+    window.localStorage.clear();
+    nameList = "";
+}
 
-// }
-
-// });
-
-
-
-
+clearScores.addEventListener("click", function (event) {
+    event.preventDefault();
+    clearAll();
+    renderScores();
+})

@@ -52,6 +52,9 @@ h2 {
     padding-bottom: 20px;
 }
 
+#quiz-message {
+    padding-top: 0px;
+}
 #score-list {
     list-style-type: none;
 }
