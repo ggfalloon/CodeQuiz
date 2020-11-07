@@ -18,6 +18,7 @@ var cardFooter = document.getElementById("card-footer");
 var nameInput = document.getElementById("name-text");
 var scoreForm = document.getElementById("score-form");
 var scoreList = document.getElementById("score-list");
+var viewScores = document.getElementById("view");
 
 var quizQuestions = [
     {
@@ -176,3 +177,10 @@ clearScores.addEventListener("click", function (event) {
     clearAll();
     renderScores();
 })
+// When view highscore button is clicked, you are taken to the high score page.
+viewScores.addEventListener("click", showScores)
+
+function showScores() {
+    intro.style.display = "none";
+    resultsContainer.style.display = "block";
+}
