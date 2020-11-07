@@ -24,12 +24,11 @@
             <div id="intro">
                 <h4>Challenge Accepted!</h4>
                 <hr>
-                <p>You've got 60 seconds to claim your fame as a knowledgeable JavaScript developer. <br> But watchout,
-                    if you choose wrong, you'll lose 10
-                    seconds. <br>
-
+                <p>You've got 60 seconds to claim your fame as a knowledgeable JavaScript developer. But watch out,
+                    if you choose the incorrect answer, you'll lose 10
+                    seconds.
                     Be sure to submit your initials to record your score or try again.
-                    <br>Click the START button below to begin. </p>
+                    Click the START button below to begin. </p>
                 <p>Good luck!</p>
                 <div><button class="btn" id="start-button">START!</button></div>
             </div>
@@ -55,34 +54,60 @@
                     <hr>
                     <div id="quizMessage">
                     </div>
+                </div>
+
+                <div id="results" style="display: none;">
+
+                    <h2>The Results are In!</h2>
+
+                    <form id="score-form" method="POST">
+                        <!-- Display the final score -->
+                        <label class="scoreCount" for="scoreCount">Your Final Score:&nbsp;</label><span
+                            id="scoreCount"></span>
+                        <br>
+                        <!-- Enter initials to record score -->
+                        <input type="text" placeholder="Enter Initials" name="name-text" id="name-text" />
+                        <button class="btn btn-info" id="submit">Record Your Score</button>
+                        <hr>
+                        <!-- Display scores, clear scores or play again -->
+                        <div id="results">
+                            <form id="score-form" method="POST">
+                                <h4>High Scores</h4>
+                            </form>
+                            <ul id="score-list"></ul>
+                            <button class="btn btn-info" id="clearScores">Clear Scores</button>
+                            <a href="index.html" class="btn" id="play-again">Play Again</a>
+                        </div>
+                    </form>
 
                 </div>
 
 
-                <div class="card-footer navbar-fixed-bottom">
+                <div class="card-footer navbar-fixed-bottom" id="card-footer">
                     <div class="row">
                         <div class="col-md-6">
                             <h4><span id="timer">Timer: </span><span id="timeShow"></span></h4>
                         </div>
                         <div class="col-md-6">
-                            <a class="score-link btn btn-dark" href="scores.html" id="view">View High Scores</a>
+                            <a class="score-link btn btn-dark" id="view">View High Scores</a>
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-        <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

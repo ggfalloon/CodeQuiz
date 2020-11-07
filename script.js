@@ -13,7 +13,8 @@ var submitButton = document.getElementById("submit");
 var scoreList = document.getElementById("score-list");
 var clearScores = document.getElementById("clearScores");
 var playAgain = document.getElementById("play-again");
-
+var resultsContainer = document.getElementById("results");
+var cardFooter = document.getElementById("card-footer");
 
 var quizQuestions = [
     {
@@ -92,13 +93,14 @@ function runQuestions() {
     quizContent.style.display = "block";
 }
 
+
 // When the answer is chosen, the text will confirm whether correct or wrong.
 function buttonFunction(answer) {
     if (answer === quizQuestions[currentQuestion].correctAnswer) {
-        score + 20;
+        score = score += 20;
         wrongRight.textContent = "Correct!";
     } else {
-        timer = setInterval(-10000);
+        setInterval(timer - 10000);
         wrongRight.textContent = "Wrong!";
     }
     // You are directed to the "View High Scores" page to see your score.
@@ -108,56 +110,57 @@ function buttonFunction(answer) {
         getQuestion();
     } else if (currentQuestion === lastQuestion) {
         clearInterval(timer);
-        quizContent.textContent = "All done! Now click \"View High Scores\" below to see and record your score.";
+        quizContent.textContent = "";
         timeShowEl.style.display = "none";
-        timer.style.display = "none";
+        cardFooter.style.display = "none";
+        resultsContainer.style.display = "block";
         renderScores();
     }
 }
+// Removes event listener of the start button after you are redirected to scores.html.
+
 var nameInput = document.getElementById("name-text");
-var nameList = ["Your High Score Here", ""];
 var scoreForm = document.getElementById("score-form");
+var scoreList = document.getElementById("score-list");
+
+var nameList = [""];
+
+renderScores();
 
 function renderScores() {
+    scorePlaceholder.textContent = score;
     scoreList.innerHTML = "";
-    for (var i = 0; i < scoreList.length; i++) {
+
+    for (var i = 0; i < nameList.length; i++) {
         var list = nameList[i];
 
         var li = document.createElement("li");
         li.textContent = list;
-        li.appendChild(li);
+        scoreList.appendChild(li);
     }
 }
-submitButton.addEventListener("submit", function (event) {
+submitButton.addEventListener("click", function (event) {
     event.preventDefault();
 
-    var listText = nameInput.nodeValue.trim();
-    if (listText === "") {
+    var nameText = nameInput.value.trim();
+
+
+    if (nameText === "") {
         return;
     }
-    nameList.push(listText);
+    nameList.push(nameText + " - " + score);
     nameInput.value = "";
 
     renderScores();
 });
-console.log(nameInput);
+
+// clearScores.addEventListener("click", function (event) {
 
 
 
 
+// });
 
 
 
 
-
-// clearScores.addEventListener("click");
-// function scoreCount() {
-//     for (var i = 0; i < )
-
-//         var li = document.createElement("li");
-//     li.textContent = newName;
-//     var count = 0;
-//     var questionTime = -10;
-//     var questionPoints = 20;
-
-// } scorePlaceholder.textContent = score
