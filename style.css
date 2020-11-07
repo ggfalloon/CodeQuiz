@@ -4,11 +4,11 @@ body {
 }
 
 .container { 
-    height: 500px;
+    height: 450px;
     margin-top: 40px;
     border-radius: 6px; 
     width: 75%;
-    margin: auto;
+    text-align: center;
     padding-top: 30px;
 }
 .card {
@@ -52,7 +52,7 @@ h2 {
     padding-bottom: 20px;
 }
 
-li {
+#score-list {
     list-style-type: none;
 }
 

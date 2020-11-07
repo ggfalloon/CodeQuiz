@@ -70,7 +70,8 @@
                         <button class="btn btn-info" id="submit">Record Your Score</button>
                         <hr>
                         <!-- Display scores, clear scores or play again -->
-                        <div id="results">
+                        <div id="results"><a id="view-scores"></a>
+
                             <form id="score-form" method="POST">
                                 <h4>High Scores</h4>
                             </form>
@@ -89,7 +90,7 @@
                             <h4><span id="timer">Timer: </span><span id="timeShow"></span></h4>
                         </div>
                         <div class="col-md-6">
-                            <a class="score-link btn btn-dark" id="view">View High Scores</a>
+                            <a href="#view-scores" id="view" class="score-link btn btn-dark">View High Scores</a>
                         </div>
                     </div>
 

@@ -100,7 +100,10 @@ function buttonFunction(answer) {
         score = score += 20;
         wrongRight.textContent = "Correct!";
     } else {
-        setInterval(timer - 10000);
+        //     var sec = 60
+        //     var timeEl = setInterval(function) {
+        //         sec = sec -= 10;
+        // }, 1000);
         wrongRight.textContent = "Wrong!";
     }
     // You are directed to the "View High Scores" page to see your score.
@@ -108,7 +111,7 @@ function buttonFunction(answer) {
     if (currentQuestion < lastQuestion) {
         currentQuestion++;
         getQuestion();
-    } else if (currentQuestion === lastQuestion) {
+    } else if (currentQuestion === lastQuestion || timeShowEl === 0) {
         clearInterval(timer);
         quizContent.textContent = "";
         timeShowEl.style.display = "none";
@@ -123,9 +126,10 @@ var nameInput = document.getElementById("name-text");
 var scoreForm = document.getElementById("score-form");
 var scoreList = document.getElementById("score-list");
 
-var nameList = [""];
+var nameList = [];
 
-renderScores();
+init();
+// renderScores();
 
 function renderScores() {
     scorePlaceholder.textContent = score;
@@ -139,6 +143,19 @@ function renderScores() {
         scoreList.appendChild(li);
     }
 }
+
+function init() {
+    var storedNames = JSON.parse(localStorage.getItem("nameList"));
+    if (storedNames !== null) {
+        nameList = storedNames;
+    }
+    renderScores();
+}
+
+function storedNames() {
+    localStorage.setItem("nameList", JSON.stringify(nameList));
+}
+
 submitButton.addEventListener("click", function (event) {
     event.preventDefault();
 
@@ -151,13 +168,17 @@ submitButton.addEventListener("click", function (event) {
     nameList.push(nameText + " - " + score);
     nameInput.value = "";
 
+    storedNames();
     renderScores();
 });
 
-// clearScores.addEventListener("click", function (event) {
+// clearScores.addEventListener("click", function (clear) {
+//     function clear(item) {
+//         var clearList = document.getElementById(item);
+//         clearList.parentNode.removeChild(clearList);
+// }
 
-
-
+//     }
 
 // });
 
