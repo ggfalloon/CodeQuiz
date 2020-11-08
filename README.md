@@ -8,10 +8,10 @@ This JavaScript quiz gives you 60 seconds to answer 5 questions. Earn 20 points 
 
 URL - https://ggfalloon.github.io/CodeQuiz/
 
-    1. Read the instructions and click the "START" button to begin.
-    2. Answer multiple choice questions by clicking on the correct answer.
-    3. After answering all of the questions, record your initials and score.
-    4. Hit the "PLAY AGAIN" to give it another shot.
+1. Read the instructions and click the "START" button to begin.
+2. Answer multiple choice questions by clicking on the correct answer.
+3. After answering all of the questions, record your initials and score.
+4. Hit the "PLAY AGAIN" button to give it another shot.
 
 ![Screen Shot 2020-11-07 at 6 04 44 PM](https://user-images.githubusercontent.com/71281652/98453907-e9803e80-2123-11eb-8a39-c7d8f2e4b722.png)
 
