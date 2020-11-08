@@ -34,11 +34,11 @@
             </div>
 
             <div id="quiz-container" class="card-body">
-
                 <div id="quiz-content" style="display: none;">
                     <div id="question">
                         <p>" "</p>
                     </div>
+                    <!--Multiple choice button selectors -->
                     <div class="choices">
 
                         <button type="button" class="btn btn-info choice" onclick="buttonFunction('choiceA')"
@@ -51,26 +51,28 @@
                             id="choiceC"></button> <br>
                     </div>
 
+                    <!-- Right or Wrong Confirmation -->
                     <hr>
                     <div id="quizMessage">
                     </div>
                 </div>
+
+                <!-- The results page with scores and initial input field. -->
                 <div id="results" style="display: none;">
-
                     <h2>The Results are In!</h2>
-
                     <form id="score-form" method="POST">
                         <!-- Display the final score -->
                         <label class="scoreCount" for="scoreCount">Your Final Score:&nbsp;</label><span
                             id="scoreCount"></span>
                         <br>
+
                         <!-- Enter initials to record score -->
                         <input type="text" placeholder="Enter Initials" name="name-text" id="name-text" />
                         <button class="btn btn-info" id="submit">Record Your Score</button>
                         <hr>
+
                         <!-- Display scores, clear scores or play again -->
                         <div id="results">
-
                             <form id="score-form" method="POST">
                                 <h4>High Scores</h4>
                             </form>
@@ -79,9 +81,7 @@
                             <a href="index.html" class="btn" id="play-again">Play Again</a>
                         </div>
                     </form>
-
                 </div>
-
 
                 <div class="card-footer navbar-fixed-bottom" id="card-footer">
                     <div class="row">
@@ -92,7 +92,6 @@
                             <a href="#score-form" class="score-link btn btn-dark" id="view">View High Scores</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -108,6 +107,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>

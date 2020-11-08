@@ -146,6 +146,7 @@ function init() {
         nameList = storedNames;
     }
 }
+
 //  Saves initials and High Scores to local storage.
 function storedNames() {
     localStorage.setItem("nameList", JSON.stringify(nameList));
@@ -177,6 +178,7 @@ clearScores.addEventListener("click", function (event) {
     clearAll();
     renderScores();
 })
+
 // When view highscore button is clicked, you are taken to the high score page.
 viewScores.addEventListener("click", showScores)
 
