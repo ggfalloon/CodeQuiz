@@ -90,7 +90,6 @@ function getQuestion() {
     choiceA.innerHTML = quest.choiceA;
     choiceB.innerHTML = quest.choiceB;
     choiceC.innerHTML = quest.choiceC;
-    console.log(getQuestion);
 }
 
 // The first queston is displayed in sync with the start of the timer.
