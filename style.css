@@ -11,14 +11,15 @@ body {
     text-align: center;
     padding-top: 30px;
 }
+
 .card {
     padding-top: 30px;
     background-color: rgb(233, 215, 241);
     border: 8px solid black;
     text-align: center;
     color: rgb(88, 13, 88);
-
 }
+
 #intro {
     color: rgb(88, 13, 88);
     font-size: large;
@@ -55,8 +56,15 @@ h2 {
 #quiz-message {
     padding-top: 0px;
 }
+
 #score-list {
-    list-style-type: none;
+    margin: auto;
+}
+
+ul {
+    width: 200px;
+    list-style-type: square;
+    text-align: left;
 }
 
 #view {

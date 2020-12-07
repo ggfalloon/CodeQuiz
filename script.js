@@ -189,7 +189,6 @@ viewScores.addEventListener("click", showScores)
 function showScores() {
     intro.style.display = "none";
     resultsContainer.style.display = "block";
-    // resultsScore.style.display = "block";
     scoreForm.style.display = "none";
 
     var viewHighScore = JSON.parse(localStorage.getItem("nameList"));
@@ -202,4 +201,3 @@ function showScores() {
     }
 
 }
-// scoreList.innerHTML =
