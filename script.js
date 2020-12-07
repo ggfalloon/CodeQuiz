@@ -191,6 +191,15 @@ function showScores() {
     resultsContainer.style.display = "block";
     // resultsScore.style.display = "block";
     scoreForm.style.display = "none";
-    scoreList.innerHTML = JSON.parse(localStorage.getItem("nameList"));
+
+    var viewHighScore = JSON.parse(localStorage.getItem("nameList"));
+
+    for (var i = 0; i < viewHighScore.length; i++) {
+        var list = viewHighScore[i];
+        var li = document.createElement("li");
+        li.textContent = list;
+        scoreList.appendChild(li);
+    }
 
 }
+// scoreList.innerHTML =
