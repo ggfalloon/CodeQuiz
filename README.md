@@ -1,6 +1,6 @@
 # JavaScript CodeQuiz
 
-## JavaScript Quiz: a fun and interactive quiz to test your knowledge of Javascript. This program allows you record your initials and score, clear scores or play again.
+### A fun and interactive quiz to test your knowledge of Javasript. This program allows you record your initials and score, clear scores or play again.
 
 This JavaScript quiz gives you 60 seconds to answer 5 questions. Earn 20 points each time your answer is correct or lose 10 seconds off of the clock if your answer is wrong. After the time is up or you've answered all of questions, you'll be directed to the results page where you can view your score, record your initials and score. You can even clear the scores and play again.
 
@@ -21,3 +21,6 @@ URL - https://ggfalloon.github.io/CodeQuiz/
 * FreeCodeCamp.org
 * StackOverflow.com
 * EloquentJavaScript.net
+
+## License
+[MIT LICENSE](LICENSE)
