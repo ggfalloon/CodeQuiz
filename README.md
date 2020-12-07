@@ -23,4 +23,4 @@ URL - https://ggfalloon.github.io/CodeQuiz/
 * EloquentJavaScript.net
 
 ## License
-[MIT LICENSE](LICENSE)
+[MIT LICENSE](LICENSE) &copy; Gabriele Falloon - ggfalloon@gmail.com
