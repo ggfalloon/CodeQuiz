@@ -60,20 +60,23 @@
                 <!-- The results page with scores and initial input field. -->
                 <div id="results" style="display: none;">
                     <h2>The Results are In!</h2>
-                    <form id="score-form" method="POST">
+                    <form method="POST">
                         <!-- Display the final score -->
-                        <label class="scoreCount" for="scoreCount">Your Final Score:&nbsp;</label><span
-                            id="scoreCount"></span>
-                        <br>
+                        <div id="score-form">
+                            <label class="scoreCount" for="scoreCount">Your Final Score:&nbsp;</label><span
+                                id="scoreCount"></span>
+                            <br>
 
-                        <!-- Enter initials to record score -->
-                        <input type="text" placeholder="Enter Initials" name="name-text" id="name-text" />
-                        <button class="btn btn-info" id="submit">Record Your Score</button>
+                            <!-- Enter initials to record score -->
+                            <input type="text" placeholder="Enter Initials" name="name-text" id="name-text" />
+                            <button class="btn btn-info" id="submit">Record Your Score</button>
+                        </div>
                         <hr>
 
+
                         <!-- Display scores, clear scores or play again -->
-                        <div id="results">
-                            <form id="score-form" method="POST">
+                        <div id="resultsScore">
+                            <form id="score-formR" method="POST">
                                 <h4>High Scores</h4>
                             </form>
                             <ul id="score-list"></ul>

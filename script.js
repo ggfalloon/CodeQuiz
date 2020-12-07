@@ -14,9 +14,11 @@ var scoreList = document.getElementById("score-list");
 var clearScores = document.getElementById("clearScores");
 var playAgain = document.getElementById("play-again");
 var resultsContainer = document.getElementById("results");
+var resultsScore = document.getElementById("resultsScore");
 var cardFooter = document.getElementById("card-footer");
 var nameInput = document.getElementById("name-text");
 var scoreForm = document.getElementById("score-form");
+var scoreFormR = document.getElementById("score-formR");
 var scoreList = document.getElementById("score-list");
 var viewScores = document.getElementById("view");
 
@@ -127,6 +129,9 @@ function renderScores() {
     timeShowEl.style.display = "none";
     cardFooter.style.display = "none";
     resultsContainer.style.display = "block";
+    resultsScore.style.display = "block";
+    // scoreFormS.style.display = "block";
+    // scoreFormR.style.display = "block";
     scorePlaceholder.textContent = score;
     scoreList.innerHTML = "";
 
@@ -184,4 +189,8 @@ viewScores.addEventListener("click", showScores)
 function showScores() {
     intro.style.display = "none";
     resultsContainer.style.display = "block";
+    // resultsScore.style.display = "block";
+    scoreForm.style.display = "none";
+    scoreList.innerHTML = JSON.parse(localStorage.getItem("nameList"));
+
 }
