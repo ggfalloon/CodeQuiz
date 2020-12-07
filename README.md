@@ -21,3 +21,6 @@ URL - https://ggfalloon.github.io/CodeQuiz/
 * FreeCodeCamp.org
 * StackOverflow.com
 * EloquentJavaScript.net
+
+## License
+[MIT LICENSE](LICENSE)
